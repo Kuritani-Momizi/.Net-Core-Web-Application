@@ -1,0 +1,25 @@
+﻿@model LifeRoutineCheck.Models.ErrorViewModel
+<link rel="stylesheet" href="~/css/site.css" />
+<form asp-controller="Login" asp-action="Test">
+    <body>
+        <div class="text-center gradation">
+            <div class="" style="width: 1000px; background-color: whitesmoke; height: 600px; margin: 100px;">
+                <div style="padding: 250px;">
+                    <span>ログイン画面</span>
+                    <div>
+                        <div>
+                            <label>ユーザー名</label>
+                            <input asp-for="ShowRequestId" />
+                        </div>
+
+                        <div>
+                            <label>パスワード</label>
+                            <input asp-for="RequestId" />
+                        </div>
+                        <button type="submit">ログイン</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</form>
