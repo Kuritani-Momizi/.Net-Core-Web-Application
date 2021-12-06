@@ -1,4 +1,4 @@
-﻿@model LifeRoutineCheck.Models.ErrorViewModel
+﻿@model LifeRoutineCheck.Models.Person
 <link rel="stylesheet" href="~/css/site.css" />
 <form asp-controller="Login" asp-action="Test">
     <body>
@@ -8,13 +8,13 @@
                     <span>ログイン画面</span>
                     <div>
                         <div>
-                            <label>ユーザー名</label>
-                            <input asp-for="ShowRequestId" />
+                            <label>ユーザーID</label>
+                            <input asp-for="Id" />
                         </div>
 
                         <div>
                             <label>パスワード</label>
-                            <input asp-for="RequestId" />
+                            <input asp-for="Password" />
                         </div>
                         <button type="submit">ログイン</button>
                     </div>
