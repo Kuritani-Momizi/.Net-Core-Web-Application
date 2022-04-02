@@ -1,0 +1,48 @@
+﻿@model LifeRoutineCheck.Areas.Person.ViewModels.ViewPersonIconUpdate
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/indexupdate.css" />
+<link rel="stylesheet" href="~/css/updateusericon.css" />
+<link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+<script src="~/js/indexregister.js"></script>
+
+<body>
+    <form asp-controller="Person" asp-action="UpdateUserIcon" enctype="multipart/form-data" method="post">
+        <div class="gradation">
+            <div class="updateusernmbox">
+                <h1>ユーザーアイコン編集</h1>
+                <div>
+
+                    <div class="image_border">
+                        @if (string.IsNullOrEmpty(Model.IconImage_URL))
+                        {
+                            <img src="~/resource/LoginIcon.png" class="preimg" />
+                        }
+                        else
+                        {
+                            <img class="preimg" src="@Model.IconImage_URL">
+                        }
+                    </div>
+
+                    <div class="padding10" style="text-align:center;">
+                        <img id="upimage" style="width:150px;height:auto;">
+                        <div style="padding-top:20px;">
+                            <label for="upfile" class="filelabel">ファイルを添付</label>
+                            <input type="file" id="upfile" accept=".png" class="fileinput" name="iconImage">
+                            <br />
+                            <span asp-validation-for="IconImage" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="padding10 btn-area">
+                        <button type="submit">変更する</button>
+                        <br />
+                        <a asp-controller="Person" asp-action="UpdateUserIndexPage" asp-area="Person" asp-route-personId="@Model.Person_Id" class="padding10">戻る</a>
+                    </div>
+
+                    <input asp-for="@Model.Person_Id" class="hidden" />
+                </div>
+            </div>
+
+        </div>
+    </form>
+</body>

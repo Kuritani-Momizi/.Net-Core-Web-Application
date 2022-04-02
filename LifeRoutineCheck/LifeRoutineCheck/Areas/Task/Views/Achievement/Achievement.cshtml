@@ -1,0 +1,17 @@
+﻿@model LifeRoutineCheck.Areas.Task.ViewModels.ViewTaskIndex
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/taskachivement.css" />
+<link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+
+<body>
+    <form asp-controller="Task" asp-action="Index">
+        <div class="gradation">
+            <div id="taskachivement" class="taskachivementbox" style="overflow: scroll; overflow-x: hidden; ">
+                <partial name="~/Areas/Task/Views/Achievement/_AchievementIndex.cshtml" />
+                <input asp-for="Person_Id" class="hidden" />
+            </div>
+        </div>
+    </form>
+</body>
+
+<script src="~/js/taskachivement.js"></script>

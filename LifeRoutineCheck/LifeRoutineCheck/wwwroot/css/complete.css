@@ -1,0 +1,53 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.completebox {
+    width: 500px;
+    height: 550px;
+    background-color: #f4efdb;
+    color: #000;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    border-radius: 4%;
+    box-shadow: 0px 7px 35px 5px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: 33%;
+    left: 143px;
+}
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.completebox a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: #000;
+}
+
+    .completebox a:hover {
+        color: cornflowerblue;
+    }
+
+.p-t80{
+    padding-top:80px;
+}
+
+.p-t260 {
+    padding-top: 260px;
+}

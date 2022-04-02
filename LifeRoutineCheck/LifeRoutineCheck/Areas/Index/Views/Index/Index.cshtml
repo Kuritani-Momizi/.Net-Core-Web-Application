@@ -1,0 +1,18 @@
+﻿@model LifeRoutineCheck.Areas.Index.ViewModels.ViewIndex
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/index.css" />
+<link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+
+<body>
+    <form asp-controller="Index" asp-action="Index">
+        <div class="gradation">
+            <div class="partialbox">
+                <partial name="_RoutineIndex" />
+                <input asp-for="Person_Id" class="personId hidden" />
+            </div>
+        </div>
+    </form>
+</body>
+
+@*この位置じゃないとSortableが使用できない*@
+<script src="~/js/index.js"></script>

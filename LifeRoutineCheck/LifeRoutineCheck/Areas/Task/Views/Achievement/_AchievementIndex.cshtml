@@ -1,0 +1,44 @@
+﻿@model LifeRoutineCheck.Areas.Task.ViewModels.ViewTaskIndex
+@if (Model.TaskList != null && Model.TaskList.Any())
+{
+    <div class="routine-container">
+        <h1>タスク達成シート</h1>
+
+        @for (int i = 0; i < Model.TaskList.Count(); i++)
+        {
+            <div>
+                <table>
+                    <tr class="taskrow" style="height: 100px;">
+                        <td class="col-1">
+                            <span>・</span>
+                        </td>
+                        <td class="col-4">
+                            <span>@Model.TaskList[i].Task_Name</span>
+                        </td>
+                        <td class="col-2" style="text-align: right;">
+                            <span>@Model.TaskList[i].Task_Count</span>
+                        </td>
+                        <td class="col-2" style="text-align: left;">
+                            <span>@Model.TaskList[i].Unit</span>
+                        </td>
+                        <td class="col-2 achivement achivementflg">
+                            <input asp-for="@Model.TaskList[i].Achivement_Flg" name="achivementcheckbox" class="hidden" />
+                            <span class="achivement-text"></span>
+                        </td>
+                        <td class="hidden">
+                            <input asp-for="@Model.TaskList[i].Task_Id" class="taskid"/>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+        }
+    </div>
+}
+else
+{
+    <h1 class="non-routinemessage">タスクを登録してみましょう</h1>
+}
+
+

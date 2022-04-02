@@ -1,0 +1,48 @@
+﻿@model LifeRoutineCheck.Areas.Routine.ViewModels.ViewRoutineUpdate
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/indexupdate.css" />
+<link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+<script src="~/js/indexregister.js"></script>
+
+<body>
+    <form asp-controller="Routine" asp-action="UpdRoutine" enctype="multipart/form-data" method="post">
+        <div class="gradation">
+
+            <div class="image_border">
+                <div class="item-image">
+                    <img class="preimg" src="@Model.IconImage_URL">
+                </div>
+            </div>
+
+            <div class="updatebox">
+                <h1 class="padding10">ルーティーン更新</h1>
+
+                <div class="padding10" style="text-align:center;">
+                    <input asp-for="Routtine_Nm" />
+                    <br />
+                    <span asp-validation-for="Routtine_Nm" class="text-danger"></span>
+
+                    <img id="upimage" style="width:150px;height:auto;">
+                    <div style="position: absolute; top: 280px; left: 195px;">
+                        <label for="upfile" class="filelabel" style="width: 130px; height:30px;">ファイルを添付</label>
+                        <input type="file" id="upfile" accept=".png" class="fileinput" name="iconImage">
+                        <br />
+                        <span asp-validation-for="IconImage" class="text-danger"></span>
+                    </div>
+
+                    <input asp-for="@Model.Person_Id" class="hidden" />
+                    <input asp-for="@Model.Routine_Id" class="hidden" />
+                </div>
+
+                <div style="position: absolute; top: 350px; left: 173px;">
+                    <button type="submit" style="width: 170px;">更新</button>
+                </div>
+                <div style="position: absolute; top: 400px;">
+                    <br />
+                    <a asp-controller="Index" asp-action="Index" asp-area="Index" asp-route-person_Id="@Model.Person_Id" class="padding10">戻る</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+

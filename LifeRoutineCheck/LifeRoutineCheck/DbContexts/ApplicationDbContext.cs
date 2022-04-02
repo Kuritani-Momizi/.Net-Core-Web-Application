@@ -10,9 +10,12 @@ namespace LifeRoutineCheck
 {
     public class ApplicationDbContext : DbContext
     {
+        public ApplicationDbContext()
+        {
+        }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-
         }
 
         public DbSet<Person> Persons { get; set; }
@@ -20,6 +23,8 @@ namespace LifeRoutineCheck
         public DbSet<GroupMember> GroupMembers { get; set; }
         public DbSet<Routine> Routines { get; set; }
         public DbSet<Task> Tasks { get; set; }
+        public DbSet<TaskComplete> TaskCompletes { get; set; }
+        public DbSet<SelectList> SelectLists { get; set; }
 
     }
 }

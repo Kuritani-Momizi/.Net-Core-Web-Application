@@ -1,25 +1,45 @@
-﻿@model LifeRoutineCheck.Models.Person
+﻿@model LifeRoutineCheck.ViewModels.ViewLogin
 <link rel="stylesheet" href="~/css/site.css" />
-<form asp-controller="Login" asp-action="Test">
-    <body>
-        <div class="text-center gradation">
-            <div class="" style="width: 1000px; background-color: whitesmoke; height: 600px; margin: 100px;">
-                <div style="padding: 250px;">
-                    <span>ログイン画面</span>
-                    <div>
-                        <div>
-                            <label>ユーザーID</label>
-                            <input asp-for="Id" />
-                        </div>
+<link rel="stylesheet" href="~/css/login.css" />
+<link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
 
-                        <div>
-                            <label>パスワード</label>
-                            <input asp-for="Password" />
-                        </div>
-                        <button type="submit">ログイン</button>
-                    </div>
+@{
+    Layout = null;
+}
+
+<body>
+    <form asp-controller="Login" asp-action="Login">
+        <div class="gradation">
+            <div class="loginbox">
+                <img src="~/resource/LoginIcon.png" class="logo" />
+
+                <div class="personinput">
+                    <label asp-for="Person_Nm"></label>
+                    <input asp-for="Person_Nm" type="text" placeholder="名前入力" />
+                    <br />
+                    <span asp-validation-for="Person_Nm" class="text-danger"></span>
                 </div>
+
+                <div class="passwordinput">
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password" type="password" placeholder="Password" />
+                    <br />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <br />
+                <div class="padding10">
+                    <button type="submit" class="btn-dark">ログイン</button>
+                </div>
+
+                <div class="padding10">
+                    <a asp-controller="Person" asp-action="EntryIndex" asp-area="Person">新規登録</a>
+                    <br />
+                    <a asp-controller="Person" asp-action="UpdatePasswordIndex" asp-area="Person">パスワード忘れた人</a>
+                </div>
+
             </div>
         </div>
-    </body>
-</form>
+    </form>
+</body>
+

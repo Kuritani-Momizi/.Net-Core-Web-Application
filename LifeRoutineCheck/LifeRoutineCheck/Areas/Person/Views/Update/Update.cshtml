@@ -1,0 +1,58 @@
+﻿@model LifeRoutineCheck.Areas.Person.ViewModels.ViewPersonUpdate
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/updateuser.css" />
+<link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="~/js/updateuser.js"></script>
+
+
+<body>
+    <form asp-controller="Person" asp-action="DeleteUser">
+        <div class="gradation">
+            <div class="updateuserbox">
+                <h1>ユーザー編集</h1>
+                <div>
+                    <div class="padding10">
+                        <label asp-for="Person_Nm"></label>
+                        <div class="editinput">
+                            <input asp-for="Person_Nm" disabled />
+                            <a asp-controller="Person" asp-action="UpdateUserNameIndex" asp-area="Person" asp-route-personId="@Model.Person_Id" class="fake-anchor-btn">変更</a>
+                        </div>
+                    </div>
+
+                    <div class="padding10">
+                        <label asp-for="MailAdress"></label>
+                        <div class="editinput">
+                            <input asp-for="MailAdress" type="email" disabled />
+                            <a asp-controller="Person" asp-action="UpdateUserMailAddressIndex" asp-area="Person" asp-route-personId="@Model.Person_Id" class="fake-anchor-btn">変更</a>
+                        </div>
+                    </div>
+
+                    <div class="padding10">
+                        <label asp-for="IconImage"></label>
+                        <div class="editinput">
+                            @if (string.IsNullOrEmpty(Model.IconImage_URL))
+                            {
+                                <img src="~/resource/LoginIcon.png" class="preimg usericon" />
+                            }
+                            else
+                            {
+                                <img class="preimg usericon" src="@Model.IconImage_URL">
+                            }
+                            <a asp-controller="Person" asp-action="UpdateUserIconIndex" asp-area="Person" asp-route-personId="@Model.Person_Id" class="fake-anchor-btn img-anchor">変更</a>
+                        </div>
+                    </div>
+
+                    <div class="padding10 delete-area">
+                        <button type="button" class="fake-delete-submit-btn" style="background-color: #4aa8d4;">削除</button>
+                        <button type="submit" class="delete-submit-btn hidden">削除</button>
+                        <a asp-controller="Index" asp-action="Index" asp-area="Index" asp-route-person_Id="@Model.Person_Id" class="back-anchor">戻る</a>
+                    </div>
+
+                    <input asp-for="@Model.Person_Id" class="hidden" />
+                </div>
+            </div>
+
+        </div>
+    </form>
+</body>

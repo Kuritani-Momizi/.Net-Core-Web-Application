@@ -90,8 +90,11 @@ namespace LifeRoutineCheck.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("Password")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PersonIconImg")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Person_Nm")
                         .HasMaxLength(50)
@@ -131,6 +134,9 @@ namespace LifeRoutineCheck.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("UpdDate")
                         .HasColumnType("datetime2");
 
@@ -140,6 +146,33 @@ namespace LifeRoutineCheck.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Routines");
+                });
+
+            modelBuilder.Entity("LifeRoutineCheck.Models.SelectList", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("EntryDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SelectList_Kbn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SelectLists");
                 });
 
             modelBuilder.Entity("LifeRoutineCheck.Models.Task", b =>
@@ -155,7 +188,13 @@ namespace LifeRoutineCheck.Migrations
                     b.Property<int>("RoutineId")
                         .HasColumnType("int");
 
+                    b.Property<int>("Task_Count")
+                        .HasColumnType("int");
+
                     b.Property<string>("Task_Nm")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Task_Unit")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdDate")
@@ -164,6 +203,27 @@ namespace LifeRoutineCheck.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tasks");
+                });
+
+            modelBuilder.Entity("LifeRoutineCheck.Models.TaskComplete", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("TaskComplete_Flg")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Task_Id")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TaskCompletes");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,0 +1,34 @@
+﻿@model LifeRoutineCheck.Areas.Person.ViewModels.ViewPersonNameUpdate
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/updateuser.css" />
+<link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+
+
+<body>
+    <form asp-controller="Person" asp-action="UpdateUserName">
+        <div class="gradation">
+            <div class="updateusernmbox">
+                <h1>ユーザー名編集</h1>
+                <div>
+                    <div class="padding10">
+                        <label asp-for="Person_Nm"></label>
+                        <div class="editinput">
+                            <input asp-for="Person_Nm" />
+                        </div>
+                        <br />
+                        <span asp-validation-for="Person_Nm" class="text-danger"></span>
+                    </div>
+
+                    <div class="padding10">
+                        <button type="submit">変更する</button>
+                        <br />
+                        <a asp-controller="Person" asp-action="UpdateUserIndexPage" asp-area="Person" asp-route-personId="@Model.Person_Id" class="padding10">戻る</a>
+                    </div>
+
+                    <input asp-for="@Model.Person_Id" class="hidden"/>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</body>

@@ -1,0 +1,33 @@
+﻿@model LifeRoutineCheck.Areas.Index.ViewModels.ViewIndex
+@if (Model.RoutineLists != null && Model.RoutineLists.Any())
+{
+    <div id="sortable" class="routine-container">
+
+        @for (int i = 0; i < Model.RoutineLists.Count(); i++)
+        {
+            <a asp-controller="Task" asp-action="TaskViewSort" asp-area="Task" asp-route-personId="@Model.Person_Id" asp-route-routineId="@Model.RoutineLists[i].Routtine_Id">
+                <div class="routine-box">
+
+                    <div class="image_border">
+                        <div class="item-image">
+                            <img src="@Model.RoutineLists[i].IconImage_URL">
+                        </div>
+                    </div>
+                    @*並び順*@
+                    <input asp-for="@Model.RoutineLists[i].SortOrder" id="@Model.RoutineLists[i].Routtine_Id" class="sortorder-icon hidden" />
+                    @*ルーティーン名*@
+                    <input asp-for="@Model.RoutineLists[i].Routtine_Nm" class="routine-nm hidden" />
+                    @*グループ名*@
+                    <input asp-for="@Model.RoutineLists[i].Group_Nm" class="routine-nm hidden" />
+
+                </div>
+            </a>
+        }
+    </div>
+}
+else
+{
+    <h1 class="non-routinemessage">ルーティーンを登録してみましょう</h1>
+}
+
+
