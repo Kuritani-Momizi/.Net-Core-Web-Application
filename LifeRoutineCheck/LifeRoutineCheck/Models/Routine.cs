@@ -29,6 +29,9 @@ namespace LifeRoutineCheck.Models
         [DisplayName("ルーティーンアイコン画像")]
         public string RoutineIconImg { get; set; }
 
+        [DisplayName("並び順番号")]
+        public int SortOrder { get; set; }
+
         [DisplayName("更新ユーザーID")]
         public int UpdPerson_Id { get; set; }
 

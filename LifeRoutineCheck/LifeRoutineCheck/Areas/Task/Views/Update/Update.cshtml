@@ -1,0 +1,56 @@
+﻿@model LifeRoutineCheck.Areas.Task.ViewModels.ViewTaskIndex
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/taskupdate.css" />
+<link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+<script src="~/js/taskupsert.js"></script>
+
+<body>
+    <form asp-controller="Task" asp-action="UpsertTask">
+        <div class="gradation">
+            <div id="taskupdate" class="taskupdatebox" style="overflow: scroll; overflow-x: hidden; ">
+                <div class="routine-container">
+                    <h1>タスク登録・編集画面</h1>
+                    <table id="task-table">
+                        @for (int i = 0; i < Model.TaskUpdateList.Count(); i++)
+                        {
+                            <tr class="taskrow" style="height: 100px;">
+                                <td class="col-1">
+                                    <img src="~/resource/DeleteTask.png" class="delete-icon" />
+                                </td>
+                                <td class="col-4">
+                                    <input asp-for="@Model.TaskUpdateList[i].Task_Name" class="taskNm" />
+                                    <br />
+                                    <span asp-validation-for="@Model.TaskUpdateList[i].Task_Name" class="text-danger"></span>
+                                </td>
+                                <td class="col-2">
+                                    <input asp-for="@Model.TaskUpdateList[i].Task_Count" class="taskCount" />
+                                    <br />
+                                    <span asp-validation-for="@Model.TaskUpdateList[i].Task_Count" class="text-danger"></span>
+                                </td>
+                                <td class="col-4">
+                                    <select asp-for="@Model.TaskUpdateList[i].Task_Unit" asp-items="@Model.TaskUpdateList[i].Task_UnitList" class="form-control">
+                                        <option>選択</option>
+                                    </select>
+                                    <br />
+                                    <span asp-validation-for="@Model.TaskUpdateList[i].Task_Unit" class="text-danger"></span>
+                                </td>
+                                <td class="hidden">
+                                    <input asp-for="@Model.TaskUpdateList[i].Task_Id" class="taskId" />
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                    <div style="text-align: center; margin-top:25px;">
+                        <img src="~/resource/AddTask.png" class="delete-icon add-task" />
+                    </div>
+
+                    <div class="complete-area padding10">
+                        <button type="submit" class="complete-btn">確定</button>
+                    </div>
+                </div>
+                <input asp-for="Person_Id" class="hidden" />
+                <input asp-for="Routine_Id" class="hidden" />
+            </div>
+        </div>
+    </form>
+</body>

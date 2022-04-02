@@ -47,11 +47,12 @@ namespace LifeRoutineCheck.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Person_Nm = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(256)", maxLength: 20, nullable: true),
                     MailAdress = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     AuthorityKbn = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     EntryDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UpdDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PersonIconImg = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                 },
                 constraints: table =>
                 {
@@ -69,6 +70,7 @@ namespace LifeRoutineCheck.Migrations
                     Routine_Nm = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     RoutineKbn = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RoutineIconImg = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SortOrder = table.Column<int>(type: "int", nullable: false),
                     UpdPerson_Id = table.Column<int>(type: "int", nullable: false),
                     EntryDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdDate = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -86,6 +88,8 @@ namespace LifeRoutineCheck.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RoutineId = table.Column<int>(type: "int", nullable: false),
                     Task_Nm = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Task_Count = table.Column<int>(type: "int", nullable: true),
+                    Task_Unit = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EntryDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },

@@ -1,0 +1,124 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.registbox {
+    width: 500px;
+    height: 550px;
+    background-color: #f4efdb;
+    color: #000;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    border-radius: 4%;
+    box-shadow: 0px 7px 35px 5px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.routine-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+.routine-box {
+    width: 200px;
+    height: 200px;
+    margin: 4px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+img {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: -20px 0px;
+    box-shadow: 0px 7px 35px 5px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.filelabel {
+    display: inline-block;
+    position: relative;
+    background-color: #1877F2;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.5s;
+}
+
+ .filelabel:hover{
+  background-color: #004db1;
+}
+
+.fileinput{
+  display: none;
+}
+
+h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.registbox label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.registbox input, button {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+    .registbox input[type="text"], input[type="password"], input[type="email"] {
+        border: none;
+        border-bottom: 1px solid slategray;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: #000;
+        font-size: 16px;
+        border-bottom-width: 2px;
+    }
+
+.registbox button[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background-color: #ff424e;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+    .registbox button[type="submit"]:hover {
+        cursor: pointer;
+        background-color: #bd2f38;
+        color: #000;
+    }
+
+.registbox a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: #000;
+}
+
+    .registbox a:hover {
+        color: cornflowerblue;
+    }
+
+.registbox .text-danger {
+    color: red;
+}
+
+.padding10 {
+    padding: 10px;
+}

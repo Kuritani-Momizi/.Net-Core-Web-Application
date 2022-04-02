@@ -1,0 +1,72 @@
+﻿<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/complete.css" />
+<link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+
+@{
+    Layout = null;
+}
+
+<body>
+    <form asp-controller="Login" asp-action="Login">
+        <div class="gradation">
+            <div class="completebox">
+                <div class="padding10 p-t80">
+                    @if (ViewBag.CompleteMessage == "Password")
+                    {
+                        <h1>パスワードが更新されました</h1>
+                    }
+                    else if (ViewBag.CompleteMessage == "UserName")
+                    {
+                        <h1>ユーザー名が更新されました</h1>
+                    }
+                    else if (ViewBag.CompleteMessage == "UserIcon")
+                    {
+                        <h1>ユーザーアイコンが更新されました</h1>
+                    }
+                    else if (ViewBag.CompleteMessage == "MailAddress")
+                    {
+                        <h1>メールアドレスが更新されました</h1>
+                    }
+                    else if (ViewBag.CompleteMessage == "Delete")
+                    {
+                        <h1>ユーザーが削除されました</h1>
+                    }
+                    else
+                    {
+                        <h1>更新されました</h1>
+                    }
+                    <br />
+                    @if (ViewBag.CompleteMessage == "Password")
+                    {
+                        <img src="~/resource/UpdatePassword.png" class="logo" />
+                    }
+                    else if (ViewBag.CompleteMessage == "UserName")
+                    {
+                        <img src="~/resource/UpdateUser.png" class="logo" />
+                    }
+                    else if (ViewBag.CompleteMessage == "UserIcon")
+                    {
+                        <img src="~/resource/UpdateUser.png" class="logo" />
+                    }
+                    else if (ViewBag.CompleteMessage == "MailAddress")
+                    {
+                        <img src="~/resource/UpdateMailAddress.png" class="logo" />
+                    }
+                    else if (ViewBag.CompleteMessage == "Delete")
+                    {
+                        <img src="~/resource/DeleteUser.png" class="logo" />
+                    }
+                    else
+                    {
+                        <h1>更新されました</h1>
+                    }
+
+                    <br />
+                    <div class="p-t260" style="text-align:center">
+                        <a class="btn-dark padding10" asp-controller="Login" asp-action="Index" asp-area="">ログイン画面へ戻る</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>

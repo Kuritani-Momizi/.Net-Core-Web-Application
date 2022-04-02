@@ -1,4 +1,39 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+//(function ($) {
+//    var $nav = $('#navArea');
+//    var $btn = $('.toggle_btn');
+//    var $mask = $('#mask');
+//    var open = 'open'; // class
+//    // menu open close
+//    $btn.on('click', function () {
+//        if (!$nav.hasClass(open)) {
+//            $nav.addClass(open);
+//        } else {
+//            $nav.removeClass(open);
+//        }
+//    });
+//    // mask close
+//    $mask.on('click', function () {
+//        $nav.removeClass(open);
+//    });
+//})(jQuery);
 
-// Write your JavaScript code.
+$(function () {
+    var $nav = $('#navArea');
+    var $btn = $('.toggle_btn');
+    var $mask = $('#mask');
+    var open = 'open'; // class
+    // menu open close
+    $btn.on('click', function () {
+        if (!$nav.hasClass(open)) {
+            $nav.addClass(open);
+        } else {
+            $nav.removeClass(open);
+        }
+    });
+    // mask close
+    $mask.on('click', function () {
+        $nav.removeClass(open);
+    });
+});
+

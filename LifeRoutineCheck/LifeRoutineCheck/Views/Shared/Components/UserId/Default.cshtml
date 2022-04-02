@@ -1,0 +1,13 @@
+﻿@using System.Security.Claims;
+@model ClaimsPrincipal
+@{
+    //ログイン中か
+    if (Model.Identity.IsAuthenticated)
+    { //ログイン中のとき、@Nameを表示する
+        <a class="nav-link text-dark" asp-page="/">@Model.Identity.Name</a>
+    }
+    else
+    { //ログイン中でないとき、「Login」を表示する
+        <a asp-page="/Account/Login" class="nav-link">Login</a>
+    }
+}

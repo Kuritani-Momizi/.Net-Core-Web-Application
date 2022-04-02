@@ -1,0 +1,47 @@
+﻿@model LifeRoutineCheck.Areas.Person.ViewModels.ViewPersonEntry
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/person.css" />
+<link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+
+@{
+    Layout = null;
+}
+
+<body>
+    <form asp-controller="Person" asp-action="InsUser">
+        <div class="gradation">
+
+            <div class="registbox">
+                <h1 class="padding10">登録画面</h1>
+
+                <div class="padding10">
+                    <label asp-for="Person_Nm"></label>
+                    <input asp-for="Person_Nm" placeholder="名前入力" />
+                    <br />
+                    <span asp-validation-for="Person_Nm" class="text-danger"></span>
+                </div>
+
+                <div class="padding10">
+                    <label asp-for="MailAdress"></label>
+                    <input asp-for="MailAdress" />
+                    <br />
+                    <span asp-validation-for="MailAdress" class="text-danger"></span>
+                </div>
+
+                <div class="padding10">
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password" type="password" placeholder="Password" />
+                    <br />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="padding10">
+                    <button type="submit" class="btn-dark">新規登録</button>
+                    <br />
+                    <a class="btn-dark padding10" asp-controller="Login" asp-action="Index" asp-area="">戻る</a>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</body>

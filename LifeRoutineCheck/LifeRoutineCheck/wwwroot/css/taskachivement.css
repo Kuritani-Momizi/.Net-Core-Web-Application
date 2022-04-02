@@ -1,0 +1,212 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.taskachivementbox {
+    width: 500px;
+    height: 550px;
+    background-color: #f4efdb;
+    color: #000;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    border-radius: 4%;
+    box-shadow: 0px 7px 35px 5px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.taskachivementbox label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.taskachivementbox input, button {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+    .taskachivementbox input[type="text"] {
+        border: none;
+        border-bottom: 1px solid slategray;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: gray;
+        font-size: 16px;
+        border-bottom-width: 2px;
+        text-align: center;
+        margin-right: 30px;
+    }
+
+    .taskachivementbox input[type="email"] {
+        border: none;
+        border-bottom: 1px solid slategray;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: gray;
+        font-size: 16px;
+        border-bottom-width: 2px;
+        text-align: center;
+        margin-right: 30px;
+    }
+
+.taskachivementbox button[type="submit"] {
+    border: none;
+    outline: none;
+    width: 150px;
+    height: 40px;
+    background-color: #ff424e;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+    .taskachivementbox button[type="submit"]:hover {
+        cursor: pointer;
+        background-color: #bd2f38;
+        color: #fff;
+    }
+
+.taskachivementbox button[type="button"] {
+    border: none;
+    outline: none;
+    width: 150px;
+    height: 40px;
+    background-color: #4aa8d4;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+    .taskachivementbox button[type="button"]:hover {
+        cursor: pointer;
+        background-color: #63c5f2;
+        color: #fff;
+    }
+
+.back-anchor {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: #000;
+}
+
+    .back-anchor:hover {
+        color: cornflowerblue;
+    }
+
+.fake-anchor-btn {
+    border: none;
+    outline: none;
+    width: 150px;
+    height: 40px;
+    background-color: #ff424e;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+    .fake-anchor-btn:hover {
+        cursor: pointer;
+        background-color: #bd2f38;
+        color: #fff;
+    }
+
+.img-anchor {
+    width: 107px;
+}
+
+.padding10 {
+    padding: 10px;
+}
+
+.w-350 {
+    width: 350px;
+}
+
+.editinput {
+    display: flex;
+    margin-right: 40px;
+}
+
+.preimg {
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin: auto;
+}
+
+.img-btn {
+    width: 110px !important;
+    margin-top: 50px;
+}
+
+.delete-area {
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.text-danger {
+    color: red;
+}
+
+.usericon {
+    border-radius: 100px;
+}
+
+.lift-btn {
+    border: none;
+    outline: none;
+    width: 150px;
+    height: 40px;
+    background-color: gray;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.achivement-btn {
+    border: none;
+    outline: none;
+    width: 150px;
+    height: 40px;
+    background-color: #4aa8d4;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/*============
+scrollbar
+=============*/
+
+#taskachivement::-webkit-scrollbar-track {
+    background: #ffe6ea;
+    border-radius: 5px;
+}
+
+#taskachivement::-webkit-scrollbar {
+    width: 20px;
+    height: 10px;
+}
+
+#taskachivement::-webkit-scrollbar-thumb {
+    background: #ff8095;
+    border-radius: 5px;
+}
+

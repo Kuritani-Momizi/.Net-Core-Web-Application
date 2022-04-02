@@ -19,6 +19,12 @@ namespace LifeRoutineCheck.Models
         [DisplayName("タスク名")]
         public string Task_Nm { get; set; }
 
+        [DisplayName("回数")]
+        public int Task_Count { get; set; }
+
+        [DisplayName("単位")]
+        public string Task_Unit { get; set; }
+
         [DisplayName("登録日")]
         public DateTime EntryDate { get; set; }
 

@@ -18,7 +18,7 @@ namespace LifeRoutineCheck.Models
         public string Person_Nm { get; set; }
 
         [DisplayName("パスワード")]
-        [StringLength(20)]
+        [StringLength(256)]
         public string Password { get; set; }
 
         [DisplayName("メールアドレス")]
@@ -34,6 +34,9 @@ namespace LifeRoutineCheck.Models
 
         [DisplayName("更新日")]
         public DateTime UpdDate { get; set; }
+
+        [DisplayName("ユーザーアイコン画像")]
+        public string PersonIconImg { get; set; }
 
     }
 }
